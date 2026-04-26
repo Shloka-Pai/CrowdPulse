@@ -1,5 +1,3 @@
-// src/models/zone.model.js
-
 const mongoose = require("mongoose");
 
 const zoneSchema = new mongoose.Schema({ 
@@ -7,6 +5,10 @@ const zoneSchema = new mongoose.Schema({
   type: String,
   coordinates: Number,
   capacity: Number,
+  eventId: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "Event"
+}
 });
 
 const Zone = mongoose.model("Zone", zoneSchema);
